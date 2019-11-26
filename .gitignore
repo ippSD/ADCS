@@ -1,2 +1,5 @@
 *.OLD
 *.bak
+*.autosave
+*.slxc
+slprj/*
