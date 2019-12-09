@@ -67,7 +67,10 @@ DEF Cubasat_transform Transform {
 			    appearance	Appearance {
 				    material	Material {
 					    ambientIntensity	0
+					    diffuseColor	0.1 0.1 0.1
+					    shininess	0.8
 					    specularColor	0.8 0.8 0.8
+					    transparency	0
 				    }
 
 			    }
@@ -2598,6 +2601,7 @@ DEF Cubasat_transform Transform {
 				appearance	Appearance {
 					material	DEF MaterialPanelXP Material {
 						ambientIntensity	0
+						shininess	0.1
 						specularColor	0 0 0
 					}
 
@@ -5134,6 +5138,69 @@ DEF Cubasat_transform Transform {
 		    ]
 ROUTE MaterialPanelXP.ambientIntensity_changed TO OI_Tecfa.set_fraction
 ROUTE OI_Tecfa.value_changed TO MaterialPanelXP.set_specularColor
+	    }
+
+	    DEF transformAxisY Transform {
+		    translation	-3.04545e-009 0.249647 0.0714632
+		    children Shape {
+			    appearance	Appearance {
+				    material	DEF MaterialAxisY Material {
+					    ambientIntensity	0
+					    diffuseColor	0 1 0
+					    shininess	0
+				    }
+
+			    }
+
+			    geometry	Cylinder {
+				    height	1
+				    radius	0.01
+			    }
+
+		    }
+	    }
+
+	    DEF transformAxisX Transform {
+		    translation	0.225 0 0
+		    rotation	0 0 -1  1.5708
+		    children Shape {
+			    appearance	Appearance {
+				    material	DEF MaterialAxisX Material {
+					    ambientIntensity	0
+					    diffuseColor	1 0 0
+					    shininess	0
+				    }
+
+			    }
+
+			    geometry	Cylinder {
+				    height	1
+				    radius	0.01
+			    }
+
+		    }
+	    }
+
+	    DEF transformAxisZ Transform {
+		    translation	0 0 0.38
+		    rotation	1 0 0  1.5708
+		    children Shape {
+			    appearance	Appearance {
+				    material	DEF MaterialAxisZ Material {
+					    ambientIntensity	0
+					    diffuseColor	0 0 1
+					    emissiveColor	0 0 1
+					    shininess	0
+				    }
+
+			    }
+
+			    geometry	Cylinder {
+				    height	1
+				    radius	0.01
+			    }
+
+		    }
 	    }
 	]
 }
