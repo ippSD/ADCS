@@ -1,0 +1,188 @@
+#VRML V2.0 utf8
+
+#Created with V-Realm Builder v2.0
+#Integrated Data Systems Inc.
+#www.ids-net.com
+
+
+Group {
+	children [ 
+	    DEF red Material {
+		    ambientIntensity	1
+		    diffuseColor	1 0 0
+		    emissiveColor	1 0 0
+		    shininess	0
+		    specularColor	1 0 0
+		    transparency	0
+	    }
+
+	    DEF green Material {
+		    ambientIntensity	1
+		    diffuseColor	0 1 0
+		    emissiveColor	0 1 0
+		    shininess	0
+		    specularColor	0 1 0
+		    transparency	0
+	    }
+
+	    DEF blue Material {
+		    ambientIntensity	1
+		    diffuseColor	0 0 1
+		    emissiveColor	0 0 1
+		    shininess	0
+		    specularColor	0 0 1
+		    transparency	0
+	    }
+
+	    Transform {
+		    translation	0 0.25 0
+		    children Shape {
+			    appearance	Appearance {
+				    material	USE blue 
+			    }
+
+			    geometry	DEF CylZ Cylinder {
+				    height	0.5
+				    radius	0.005
+			    }
+
+		    }
+	    }
+
+	    Transform {
+		    translation	0 0.5 0
+		    children Shape {
+			    appearance	Appearance {
+				    material	USE blue 
+			    }
+
+			    geometry	Cone {
+				    bottomRadius	0.015
+				    height	0.04
+			    }
+
+		    }
+	    }
+
+	    Transform {
+		    translation	0.25 0 0
+		    rotation	0 0 1  1.5708
+		    children Shape {
+			    appearance	Appearance {
+				    material	USE green 
+			    }
+
+			    geometry	DEF CylY Cylinder {
+				    height	0.5
+				    radius	0.005
+			    }
+
+		    }
+	    }
+
+	    Transform {
+		    translation	0.5 0 0
+		    rotation	0 0 -1  1.5708
+		    children Shape {
+			    appearance	Appearance {
+				    material	USE green 
+			    }
+
+			    geometry	Cone {
+				    bottomRadius	0.015
+				    height	0.04
+			    }
+
+		    }
+	    }
+
+	    Transform {
+		    translation	0 0 0.25
+		    rotation	1 0 0  1.5708
+		    children Shape {
+			    appearance	Appearance {
+				    material	USE red 
+			    }
+
+			    geometry	Cylinder {
+				    height	0.5
+				    radius	0.005
+				    bottom	TRUE
+			    }
+
+		    }
+	    }
+
+	    Transform {
+		    translation	0 0 0.5
+		    rotation	1 0 0  1.5708
+		    children Shape {
+			    appearance	Appearance {
+				    material	USE red 
+			    }
+
+			    geometry	Cone {
+				    bottomRadius	0.015
+				    height	0.04
+			    }
+
+		    }
+	    }
+
+	    Transform {
+		    translation	-0.1 -0.1 0.55
+		    children Shape {
+			    appearance	Appearance {
+				    material	USE red 
+			    }
+
+			    geometry	Text {
+				    string	"X"
+				    fontStyle	FontStyle {
+					    size	0.3
+				    }
+
+			    }
+
+		    }
+	    }
+
+	    Transform {
+		    translation	0.5 -0.2 0
+		    rotation	0 1 0  1.5708
+		    children Shape {
+			    appearance	Appearance {
+				    material	USE green 
+			    }
+
+			    geometry	Text {
+				    string	"Y"
+				    fontStyle	FontStyle {
+					    size	0.3
+				    }
+
+			    }
+
+		    }
+	    }
+
+	    Transform {
+		    translation	-0.1 0.55 0
+		    rotation	0 1 0  0.785398
+		    children Shape {
+			    appearance	Appearance {
+				    material	USE blue 
+			    }
+
+			    geometry	Text {
+				    string	"Z"
+				    fontStyle	FontStyle {
+					    size	0.3
+				    }
+
+			    }
+
+		    }
+	    }
+	]
+}

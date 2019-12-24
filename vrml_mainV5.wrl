@@ -1,0 +1,258 @@
+#VRML V2.0 utf8
+
+#Created with V-Realm Builder v2.0
+#Integrated Data Systems Inc.
+#www.ids-net.com
+
+
+WorldInfo {
+	info	"World Info"
+	title	"Super Cubas World 2"
+}
+DEF StarSun Transform {
+	translation	10 0 0
+	children [ 
+	    PointLight {
+		    location	0 0 0
+	    }
+
+	    Shape {
+		    appearance	Appearance {
+			    material	Material {
+				    ambientIntensity	0
+				    diffuseColor	0 0 0
+				    emissiveColor	1 1 0
+				    shininess	1
+			    }
+
+		    }
+
+		    geometry	Sphere {
+			    radius	0.25
+		    }
+
+	    }
+	]
+}
+DEF PlanetEarth Transform {
+	translation	5 0 0
+	rotation	0 1 0  2.10487
+	children Shape {
+		appearance	Appearance {
+			material	Material {
+				ambientIntensity	0
+				diffuseColor	1 1 1
+				shininess	0
+				specularColor	1 1 1
+			}
+
+			textureTransform	NULL
+			texture	ImageTexture {
+				url	"texture/earth_atmos_2048.jpg"
+			}
+
+		}
+
+		geometry	Sphere {
+			radius	1.01
+		}
+
+	}
+}
+DEF Background Transform {
+	children Shape {
+		appearance	Appearance {
+			material	NULL
+			texture	ImageTexture {
+				url	"texture/spaces.jpg"
+			}
+
+		}
+
+		geometry	Sphere {
+			radius	400
+		}
+
+	}
+}
+DEF BillSun Transform {
+	children [ 
+	    PointLight {
+		    location	10 0 0
+		    on	FALSE
+		    radius	100
+	    }
+
+	    DEF STB Transform {
+		    translation	0 0.5 0
+		    children Shape {
+			    appearance	Appearance {
+				    material	Material {
+					    ambientIntensity	0.2
+					    emissiveColor	1 1 0
+				    }
+
+			    }
+
+			    geometry	Cylinder {
+				    height	1
+				    radius	0.01
+			    }
+
+		    }
+	    }
+
+	    DEF STT Transform {
+		    translation	0 1 0
+		    children Shape {
+			    appearance	Appearance {
+				    material	Material {
+					    ambientIntensity	0.2
+					    emissiveColor	1 1 0
+				    }
+
+			    }
+
+			    geometry	Cone {
+				    bottomRadius	0.05
+				    height	0.2
+			    }
+
+		    }
+	    }
+
+	    DEF STS Transform {
+		    translation	0 1.5 0
+		    children Shape {
+			    appearance	Appearance {
+				    material	Material {
+					    ambientIntensity	0.2
+					    emissiveColor	1 1 0
+				    }
+
+			    }
+
+			    geometry	Sphere {
+				    radius	0.05
+			    }
+
+		    }
+	    }
+	]
+}
+DEF BillEarth Transform {
+	children [ 
+	    DEF ETS Transform {
+		    translation	0 1.5 0
+		    children Shape {
+			    appearance	Appearance {
+				    material	Material {
+					    ambientIntensity	0
+					    emissiveColor	0 1 0.75
+					    transparency	0.5
+				    }
+
+			    }
+
+			    geometry	Sphere {
+				    radius	0.05
+			    }
+
+		    }
+	    }
+
+	    DEF ETB Transform {
+		    translation	0 0.5 0
+		    children Shape {
+			    appearance	Appearance {
+				    material	Material {
+					    ambientIntensity	0.2
+					    emissiveColor	0 1 0.75
+				    }
+
+			    }
+
+			    geometry	Cylinder {
+				    height	1
+				    radius	0.01
+			    }
+
+		    }
+	    }
+
+	    DEF ETT Transform {
+		    translation	0 1 0
+		    children Shape {
+			    appearance	Appearance {
+				    material	Material {
+					    ambientIntensity	0.2
+					    emissiveColor	0 1 0.75
+				    }
+
+			    }
+
+			    geometry	Cone {
+				    bottomRadius	0.05
+				    height	0.2
+			    }
+
+		    }
+	    }
+
+	    DEF ET Transform {
+		    translation	0 400 0
+		    children Shape {
+			    appearance	Appearance {
+				    material	NULL
+				    textureTransform	NULL
+				    texture	ImageTexture {
+					    url	"texture/earth_atmos_2048.jpg"
+					    repeatS	FALSE
+					    repeatT	FALSE
+				    }
+
+			    }
+
+			    geometry	Sphere {
+				    radius	180
+			    }
+
+		    }
+	    }
+	]
+}
+DEF groupArrows Group {
+	children []
+}
+DEF XYZView Transform {
+	translation	0 0 0
+	rotation	-0.707107 0 0.707107  0.785398
+	children DEF ViewpointXYZ Viewpoint {
+		orientation	0 1 0  0.785398
+		position	2 0 2
+		description	"SCI Isoview"
+	}
+}
+DEF BodyCoor Transform {
+	children [ 
+	    DEF ViewpointBody Viewpoint {
+		    fieldOfView	0.785398
+		    jump	TRUE
+		    position	0 0 4
+		    description	"Body Coor. Sys. Fixed Viewpoint"
+	    }
+
+	    Inline {
+		    url	"vrml_cubasat.wrl"
+	    }
+
+	    Inline {
+		    url	"vrml_arrows.wrl"
+	    }
+	]
+}
+DEF ViewpointSCI Viewpoint {
+	fieldOfView	0.785398
+	position	0 0 4
+	description	"SCI Coor. Sys. Fixed Viewpoint"
+}
