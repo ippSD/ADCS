@@ -45,9 +45,9 @@ c_bi = r_bo * c_oi;
 
 %% Initial Angular Velocity
 
-omega_b = [n; 0e0; 0e0];  % rad/s
+omega_b = -[n; 0e0; 0e0];  % rad/s
 omega_i = c_bi' * omega_b;  % rad/s
-omega0 = omega_i;  % rad/s
+omega_0 = omega_i;  % rad/s
 omega_d = omega_i;  % rad/s
 
 
