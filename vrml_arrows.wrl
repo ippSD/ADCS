@@ -38,10 +38,10 @@ Group {
 		    translation	0 0.25 0
 		    children Shape {
 			    appearance	Appearance {
-				    material	USE blue 
+				    material	USE green 
 			    }
 
-			    geometry	DEF CylZ Cylinder {
+			    geometry	DEF CylY Cylinder {
 				    height	0.5
 				    radius	0.005
 			    }
@@ -53,7 +53,7 @@ Group {
 		    translation	0 0.5 0
 		    children Shape {
 			    appearance	Appearance {
-				    material	USE blue 
+				    material	USE green 
 			    }
 
 			    geometry	Cone {
@@ -69,10 +69,10 @@ Group {
 		    rotation	0 0 1  1.5708
 		    children Shape {
 			    appearance	Appearance {
-				    material	USE green 
+				    material	USE red 
 			    }
 
-			    geometry	DEF CylY Cylinder {
+			    geometry	DEF CylX Cylinder {
 				    height	0.5
 				    radius	0.005
 			    }
@@ -82,10 +82,10 @@ Group {
 
 	    Transform {
 		    translation	0.5 0 0
-		    rotation	0 0 -1  1.5708
+		    rotation	0 0 1  1.5708
 		    children Shape {
 			    appearance	Appearance {
-				    material	USE green 
+				    material	USE red 
 			    }
 
 			    geometry	Cone {
@@ -101,7 +101,7 @@ Group {
 		    rotation	1 0 0  1.5708
 		    children Shape {
 			    appearance	Appearance {
-				    material	USE red 
+				    material	USE blue 
 			    }
 
 			    geometry	Cylinder {
@@ -118,7 +118,7 @@ Group {
 		    rotation	1 0 0  1.5708
 		    children Shape {
 			    appearance	Appearance {
-				    material	USE red 
+				    material	USE blue 
 			    }
 
 			    geometry	Cone {
@@ -128,61 +128,65 @@ Group {
 
 		    }
 	    }
+      
+      Group {
+        children [
+          Transform {
+            translation	-0.1 -0.1 0.55
+            children Shape {
+              appearance	Appearance {
+                material	USE blue 
+              }
 
-	    Transform {
-		    translation	-0.1 -0.1 0.55
-		    children Shape {
-			    appearance	Appearance {
-				    material	USE red 
-			    }
+              geometry	Text {
+                string	"Z"
+                fontStyle	FontStyle {
+                  size	0.3
+                }
 
-			    geometry	Text {
-				    string	"X"
-				    fontStyle	FontStyle {
-					    size	0.3
-				    }
+              }
 
-			    }
+            }
+          }
 
-		    }
-	    }
+          Transform {
+            translation	0.5 -0.2 0
+            rotation	0 1 0  1.5708
+            children Shape {
+              appearance	Appearance {
+                material	USE red 
+              }
 
-	    Transform {
-		    translation	0.5 -0.2 0
-		    rotation	0 1 0  1.5708
-		    children Shape {
-			    appearance	Appearance {
-				    material	USE green 
-			    }
+              geometry	Text {
+                string	"X"
+                fontStyle	FontStyle {
+                  size	0.3
+                }
 
-			    geometry	Text {
-				    string	"Y"
-				    fontStyle	FontStyle {
-					    size	0.3
-				    }
+              }
 
-			    }
+            }
+          }
 
-		    }
-	    }
+          Transform {
+            translation	-0.1 0.55 0
+            rotation	0 1 0  0.785398
+            children Shape {
+              appearance	Appearance {
+                material	USE green 
+              }
 
-	    Transform {
-		    translation	-0.1 0.55 0
-		    rotation	0 1 0  0.785398
-		    children Shape {
-			    appearance	Appearance {
-				    material	USE blue 
-			    }
+              geometry	Text {
+                string	"Y"
+                fontStyle	FontStyle {
+                  size	0.3
+                }
 
-			    geometry	Text {
-				    string	"Z"
-				    fontStyle	FontStyle {
-					    size	0.3
-				    }
+              }
 
-			    }
-
-		    }
-	    }
+            }
+          }
+        ]
+      }
 	]
 }

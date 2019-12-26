@@ -1,0 +1,17 @@
+#VRML V2.0 utf8
+# Created with V-Realm Builder v2.0
+# Integrated Data Systems Inc.
+# www.ids-net.com
+
+DEF Background Group {
+  children Shape {
+    appearance Appearance {
+      texture ImageTexture {
+        url "texture/spaces.jpg" 
+      }
+    }
+    geometry Sphere {
+      radius 400
+    }
+  }
+}

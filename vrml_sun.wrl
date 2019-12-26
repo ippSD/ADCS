@@ -1,0 +1,24 @@
+#VRML V2.0 utf8
+# Created with V-Realm Builder v2.0
+# Integrated Data Systems Inc.
+# www.ids-net.com
+
+DEF StarSun Group {
+  children [
+    PointLight {
+    }
+    Shape {
+      appearance Appearance {
+        material Material {
+          shininess 1
+          emissiveColor 1 1 0
+          diffuseColor 0 0 0
+          ambientIntensity 0
+        }
+      }
+      geometry Sphere {
+        radius 1
+      }
+    }
+  ]
+}
