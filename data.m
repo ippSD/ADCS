@@ -31,6 +31,9 @@ period_sc = 2e0 * pi / n;  % s
 lambda_0 = 0e0;  % deg
 
 %% Mod
+%period_sc = 30e0;  % s
+%n = 2e0 * pi / period_sc;  % rad/s
+%period_sc = 3000e0;  % s
 %raan = 0e0;  % deg
 %inc = 0e0;  % deg
 
@@ -109,6 +112,16 @@ aa=asind(rt/r);
 es=180+(90-aa);
 ee=360-(90-aa);
 eclipse=[es, ee];
+
+%% Pablicuo's sensor data
+
+Cs = 1361 ;%Solar constant
+A =0.35; %Albedo (effect of the albedo in sun sensors
+
+low_sat = 0.5; %Lower limit saturation sensor [W/m2]
+up_sat = 1e4; %Upper limit saturation sensor [W/m2]
+
+var = 1e-4; %Noise variance of sun sensors
 
 %% Simulation Parameters
 
