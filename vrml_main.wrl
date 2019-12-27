@@ -50,20 +50,20 @@ DEF ViewpointSCI Viewpoint {
   description "SCI Coor. Sys. Fixed Viewpoint"
   position 0 0 4
 }
+
 DEF EciCoor Transform {
   translation 10 0 0
-  children [
-    DEF EfCoor Transform {
-      rotation 0 0 1 90
-      children DEF InlineEarth Inline {
-        url "vrml_earth.wrl"
-      }
+  children DEF EfCoor Transform {
+    rotation 0 0 1 90
+    children DEF InlineEarth Inline {
+      url "vrml_earth.wrl"
     }
-    DEF TranslateSun Transform {
-      translation 100 0 0
-      children DEF InlineSun Inline {
-        url "vrml_sun.wrl"
-      }
-    }
-  ]
+  }
+}
+
+DEF TranslateSun Transform {
+  translation 100 0 0
+  children DEF InlineSun Inline {
+    url "vrml_sun.wrl"
+  }
 }
