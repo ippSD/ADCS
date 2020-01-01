@@ -1,3 +1,6 @@
+clear
+clc
+
 %% Constants
 
 RP = 6378.0;  % km
@@ -39,33 +42,33 @@ lambda_0 = 0e0;  % deg
 
 %% SCI -> Body Coord. Sys. Transformation Matrix
 
-r_raan = [cosd(raan), sind(raan), 0e0; -sind(raan), cosd(raan), 0e0; 0e0, 0e0, 1e0];
-r_incc = [1e0, 0e0, 0e0; 0e0, cosd(inc), sind(inc); 0e0, -sind(inc), cosd(inc)];
+c_raan = [cosd(raan), sind(raan), 0e0; -sind(raan), cosd(raan), 0e0; 0e0, 0e0, 1e0];
+c_incc = [1e0, 0e0, 0e0; 0e0, cosd(inc), sind(inc); 0e0, -sind(inc), cosd(inc)];
 
-c_oi = r_incc * r_raan;
+c_oi = c_incc * c_raan;
 
-r_bo = [0e0, 0e0, -1e0; 0e0, 1e0, 0e0; 1e0, 0e0, 0e0];
+c_bo = [0e0, 0e0, -1e0; 0e0, 1e0, 0e0; 1e0, 0e0, 0e0];
 
-c_bi = r_bo * c_oi;
+c_bi = c_bo * c_oi;
 
 %% Initial Angular Velocity
 
-omega_b = -[n; 0e0; 0e0];  % rad/s
-omega_i = c_bi' * omega_b;  % rad/s
-omega_0 = omega_i;  % rad/s
-omega_d = omega_i;  % rad/s
+omega_b = [n; 0e0; 0e0];  % rad/s
+%omega_i = c_bi' * omega_b;  % rad/s
+%omega_0 = omega_i;  % rad/s
+%omega_d = omega_i;  % rad/s
 
 
 %% Initial Quternion
 
-q0 = zeros(4, 1);
-phi = acos(5e-1 * (trace(c_bi) - 1e0));
-s_p = sin(phi);
-c_p = cos(phi);
-q0(1) = (c_bi(2,3) - c_bi(3,2)) / (2e0 * s_p) * sin(phi / 2e0);
-q0(2) = (c_bi(3,1) - c_bi(1,3)) / (2e0 * s_p) * sin(phi / 2e0);
-q0(3) = (c_bi(1,2) - c_bi(2,1)) / (2e0 * s_p) * sin(phi / 2e0);
-q0(4) = cos(phi/2e0);
+%q0 = zeros(4, 1);
+%phi = acos(5e-1 * (trace(c_bi) - 1e0));
+%s_p = sin(phi);
+%c_p = cos(phi);
+%q0(1) = (c_bi(2,3) - c_bi(3,2)) / (2e0 * s_p) * sin(phi / 2e0);
+%q0(2) = (c_bi(3,1) - c_bi(1,3)) / (2e0 * s_p) * sin(phi / 2e0);
+%q0(3) = (c_bi(1,2) - c_bi(2,1)) / (2e0 * s_p) * sin(phi / 2e0);
+%q0(4) = cos(phi/2e0);
 
 %% Bianca's ephem data
 

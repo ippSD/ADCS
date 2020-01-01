@@ -7,23 +7,22 @@ WorldInfo {
   title "Super Cubas World 2"
   info "World Info" 
 }
-
 DEF InlineBackground Inline {
-  url "vrml_background.wrl"
+  url "vrml_background.wrl" 
 }
-
 DEF BillSun Transform {
-  children DEF InlineAxisSun Inline {
-    url "vrml_axis_sun.wrl"
+  children DEF ActivateSunsensors Switch {
+    whichChoice 1
+    choice DEF InlineAxisSun Inline {
+      url "vrml_axis_sun.wrl" 
+    }
   }
 }
-
 DEF BillEarth Transform {
   children DEF InlineAxisEarth Inline {
-    url "vrml_axis_earth.wrl"
+    url "vrml_axis_earth.wrl" 
   }
 }
-
 DEF XYZView Transform {
   rotation -0.707107 0 0.707107 0.785398
   children DEF ViewpointXYZ Viewpoint {
@@ -50,20 +49,23 @@ DEF ViewpointSCI Viewpoint {
   description "SCI Coor. Sys. Fixed Viewpoint"
   position 0 0 4
 }
-
 DEF EciCoor Transform {
   translation 10 0 0
   children DEF EfCoor Transform {
     rotation 0 0 1 90
-    children DEF InlineEarth Inline {
-      url "vrml_earth.wrl"
-    }
+    children [
+      DEF InlineEarth Inline {
+        url "vrml_earth.wrl" 
+      }
+      DEF InlineEcuator Inline {
+        url "vrml_ecuator.wrl" 
+      }
+    ]
   }
 }
-
 DEF TranslateSun Transform {
   translation 100 0 0
   children DEF InlineSun Inline {
-    url "vrml_sun.wrl"
+    url "vrml_sun.wrl" 
   }
 }

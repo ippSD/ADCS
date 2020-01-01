@@ -17,7 +17,7 @@ DEF StarSun Group {
         }
       }
       geometry Sphere {
-        radius 1
+        radius 695.508
       }
     }
   ]
