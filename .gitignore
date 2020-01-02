@@ -19,13 +19,16 @@ slprj/
 octave-workspace
 
 # Simulink autosave extension
-.autosave
+**/*.autosave
 
 # Simulink Cache
 *.slxc
 
 # Other
+**/pdfs
+**/OLD
 *.OLD
 *.bak
 *.rar
 *.r2019a
+*.zip

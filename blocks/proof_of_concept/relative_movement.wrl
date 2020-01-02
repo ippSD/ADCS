@@ -1,0 +1,28 @@
+#VRML V2.0 utf8
+
+Transform {
+  rotation 1 0 0 1.5708
+  children Viewpoint {
+    description "View XZ"
+  }
+}
+DEF Earth Transform {
+  children [
+    Inline {
+      url "/home/imanol/Escritorio/ADCS/vrml_earth.wrl" 
+    }
+    Viewpoint {
+      description "Earth XY"
+    }
+  ]
+}
+DEF S/C Transform {
+  children [
+    Inline {
+      url "/home/imanol/Escritorio/ADCS/vrml_cubasat.wrl" 
+    }
+    Viewpoint {
+      description "S/C XY"
+    }
+  ]
+}
