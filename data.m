@@ -44,16 +44,15 @@ lambda_0 = 0e0;  % deg
 
 c_raan = [cosd(raan), sind(raan), 0e0; -sind(raan), cosd(raan), 0e0; 0e0, 0e0, 1e0];
 c_incc = [1e0, 0e0, 0e0; 0e0, cosd(inc), sind(inc); 0e0, -sind(inc), cosd(inc)];
-
-c_oi = c_incc * c_raan;
-
 c_bo = [0e0, 0e0, -1e0; 0e0, 1e0, 0e0; 1e0, 0e0, 0e0];
 
+c_oi = c_incc * c_raan;
 c_bi = c_bo * c_oi;
 
 %% Initial Angular Velocity
 
-omega_b = [n; 0e0; 0e0];  % rad/s
+omega_b = -[n; 0e0; 0e0];  % rad/s
+%omega_b = [0e0; 0e0; n];  % rad/s
 %omega_i = c_bi' * omega_b;  % rad/s
 %omega_0 = omega_i;  % rad/s
 %omega_d = omega_i;  % rad/s

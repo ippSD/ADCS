@@ -1,0 +1,49 @@
+#VRML V2.0 utf8
+# Created with V-Realm Builder v2.0
+# Integrated Data Systems Inc.
+# www.ids-net.com
+
+Group {
+  #    DEF OTB Transform {
+  #      translation 0 0 0
+  #      children Shape {
+  #        appearance Appearance {
+  #          material Material {
+  #            emissiveColor 0.75 0 0.75
+  #          }
+  #        }
+  #        geometry Cylinder {
+  #          radius 0.005
+  #          height 2.
+  #        }
+  #      }
+  #    }
+  #    DEF OTT Transform {
+  #      translation 0 1 0
+  #      children Shape {
+  #        appearance Appearance {
+  #          material Material {
+  #            emissiveColor 0.75 0 0.75
+  #          }
+  #        }
+  #        geometry Cone {
+  #          height 0.2
+  #          bottomRadius 0.05
+  #        }
+  #      }
+  #    }
+  children DEF OTS Transform {
+      children Shape {
+        appearance Appearance {
+          material Material {
+            transparency 0.5
+            emissiveColor 0.75 0 0.75
+            ambientIntensity 0
+          }
+        }
+        geometry Sphere {
+          radius 0.05
+        }
+      }
+    }
+}

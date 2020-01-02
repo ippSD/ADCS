@@ -4,11 +4,17 @@
 # www.ids-net.com
 
 WorldInfo {
-  title "Super Cubas World 2"
+  title "Earth-Sun-S/C World"
   info "World Info" 
 }
 DEF InlineBackground Inline {
   url "vrml_background.wrl" 
+}
+DEF InertialFrame Transform {
+  scale 1.25 1.25 1.25
+  children Inline {
+      url "vrml_arrows.wrl" 
+    }
 }
 DEF BillSun Transform {
   children DEF ActivateSunsensors Switch {
