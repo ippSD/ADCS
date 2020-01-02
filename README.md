@@ -9,6 +9,6 @@ ADCS subsystem simulation of an Earth Observation satellite. Includes a 3D Earth
 * Simulink 3D Animations
 
 
-![S/C VRML view 1](./images/image1.tif)
+![S/C VRML view 1](./images/image1.png)
 
-![S/C VRML view 2](./images/image2.tif)
+![S/C VRML view 2](./images/image2.png)
